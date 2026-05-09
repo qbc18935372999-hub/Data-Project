@@ -48,7 +48,7 @@ taxi_data.db: Persistent DuckDB database file. (Not uploaded due to large file s
 
    Specific File: Please download the Yellow Tripdata (January 2024) Parquet file.
 
-   Placement: Save the file as yellow_tripdata_2024-01.parquet in the project root directory.
+   Placement: Save the file as yellow_tripdata_2024-01.parquet in the project directory.
 
 2. Benchmarking (MySQL)
 
