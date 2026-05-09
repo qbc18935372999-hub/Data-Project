@@ -26,6 +26,38 @@ Language: Python 3.11
 
 Visuals: Plotly Express
 
+### Project Structure
+
+app_final.py: The main interactive dashboard application.
+
+Experiment_and_Benchmark.ipynb: Notebook containing performance comparison tests (MySQL vs. DuckDB).
+
+taxi_zone_lookup.csv: Metadata for NYC borough mapping.
+
+yellow_tripdata_2024-01.parquet: The primary dataset (Download link provided below).
+
+taxi_data.db: Persistent DuckDB database file. (Not uploaded due to large file size; will be automatically generated upon initial data ingestion or when running the benchmark notebook).
+
+### Setup & Configuration
+
+1. Data Preparation
+   
+   Due to GitHub's file size limitations (the dataset is >50MB), the raw Parquet data is not included in this repository.
+
+   Download Link: [NYC TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+   Specific File: Please download the Yellow Tripdata (January 2024) Parquet file.
+
+   Placement: Save the file as yellow_tripdata_2024-01.parquet in the project root directory.
+
+2. Benchmarking (MySQL)
+
+   If you are running the Experiment_and_Benchmark.ipynb to compare DuckDB with MySQL:
+
+   Database Password: Locate the database connection cell and change the db_password variable to your actual local MySQL password.
+
+   Note: Failing to update this will result in a connection error.
+
 ### CRITICAL: Database Connection & Usage Note
 
 Please read carefully before running the code:
@@ -40,12 +72,4 @@ To avoid Connection Error or Database Locked exceptions, please follow these ste
 
   3. Conversely, close the Jupyter kernel before restarting the Streamlit dashboard.
 
-### Project Structure
-
-app_final.py: The main interactive dashboard application.
-
-Experiment_and_Benchmark.ipynb: Notebook containing performance comparison tests (MySQL vs. DuckDB).
-
-taxi_zone_lookup.csv: Metadata for NYC borough mapping.
-
-yellow_tripdata_2024-01.parquet: The primary dataset (Download link provided below).
+  4. Run app_final.py: Open the VS Code terminal, navigate to this project folder, activate the environment with Streamlit installed, then run the command: streamlit run app_final.py
